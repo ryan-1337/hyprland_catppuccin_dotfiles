@@ -1,0 +1,139 @@
+@import "mocha.css";
+
+* {
+  font-family: FantasqueSansMono Nerd Font;
+  font-size: 13px;
+  min-height: 0;
+}
+
+#waybar {
+  background: @base;
+  color: @text;
+    margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @sky;
+    border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+
+#workspaces button.urgent {
+  background-color: @red;
+}
+
+#window {
+  color: @text;
+  background-color: @base;
+    border-radius: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+#clock, #battery, #cpu, #memory, #temperature, #backlight, #network, #pulseaudio, #custom-media, #tray, #mode, #idle_inhibitor {
+  padding: 0.5rem 1rem;
+  margin: 5px 0;
+}
+
+#clock {
+  color: @text;
+}
+
+#battery.charging {
+  color: #ffffff;
+  background-color: @green;
+}
+
+@keyframes blink {
+to {
+  background-color: @rosewater;
+  color: @mantle;
+}
+}
+
+#cpu {
+  color: @green;
+}
+
+#memory {
+  color: @sapphire;
+}
+
+#backlight {
+  color: @teal;
+}
+
+#network {
+  color: @sapphire;
+}
+
+#network.disconnected {
+  color: @red;
+}
+
+#pulseaudio {
+  color: @peach;
+}
+
+#pulseaudio.muted {
+  color: @sky;
+}
+
+#custom-media {
+  color: @green;
+}
+
+.custom-spotify {
+  color: @green;
+}
+
+.custom-vlc {
+  color: @peach;
+}
+
+#custom-wl-gammarelay-temperature {
+  color: @maroon;
+}
+
+#custom-pomodoro {
+  color: @lavender;
+  margin-right: 1em;
+}
+
+#temperature {
+  color: @rosewater;
+}
+
+#temperature.critical {
+  color: @red;
+}
+
+#tray {
+  color: @flamingo;
+}
+
+#idle_inhibitor {
+  color: @teal;
+}
+
+#idle_inhibitor.activated {
+  color: @sky;
+}

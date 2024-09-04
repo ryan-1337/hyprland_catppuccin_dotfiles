@@ -1,0 +1,119 @@
+{
+  "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 32, // Waybar height
+                  // "width": 120, // Waybar width
+                  // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/mode", "custom/media"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray","pulseaudio", "cpu", "memory", "temperature", "backlight", "custom/pomodoro", "custom/wl-gammarelay-temperature","idle_inhibitor", "clock"],
+    // Modules configuration
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "disable-markup" : false,
+      "all-outputs": true,
+      "format": "  {icon}  ",
+      //"format":"{icon}",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "10": "",
+        "4": "4",
+        "5": "5",
+        "active": "",
+        "default": ""
+      }
+    },
+    "hyprland/mode": {
+      "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+    "custom/pomodoro": {
+      "format": "{}",
+      "return-type": "json",
+      "exec": "waybar-module-pomodoro",
+      "on-click": "waybar-module-pomodoro toggle",
+      "on-click-right": "waybar-module-pomodoro reset",
+    },
+    "tray": {
+      "icon-size": 21,
+      "spacing": 10
+    },
+    "clock": {
+      "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+      "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+      "format": "{usage}% "
+    },
+    "memory": {
+      "format": "{}% "
+    },
+    "temperature": {
+      "thermal-zone": 2,
+      "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+      "critical-threshold": 80,
+      "format-critical": "{temperatureC}°C ",
+      "format": "{temperatureC}°C "
+    },
+    "backlight": {
+      // "device": "acpi_video1",
+      "format": "{percent}% {icon}",
+      "states": [0,50],
+      "format-icons": ["", ""]
+    },
+    "pulseaudio": {
+      //"scroll-step": 1,
+      "format": "{volume}% {icon}",
+      "format-bluetooth": "{volume}% {icon}",
+      "format-muted": "",
+      "format-icons": {
+        "headphones": "",
+        "handsfree": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/media": {
+      "format": "{icon} {}",
+      "return-type": "json",
+      "max-length": 40,
+      "format-icons": {
+        "spotify": "",
+        "default": "🎜"
+      },
+      "escape": true,
+      "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    },
+
+    "custom/wl-gammarelay-temperature": {
+      "format": "{} ",
+      "exec": "wl-gammarelay-rs watch {t}",
+      "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +100",
+      "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -100"
+    },
+    "custom/wl-gammarelay-brightness": {
+      "format": "{}% ",
+      "exec": "wl-gammarelay-rs watch {bp}",
+      "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d +0.02",
+      "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateBrightness d -0.02"
+    },
+    "custom/wl-gammarelay-gamma": {
+      "format": "{}% γ",
+      "exec": "wl-gammarelay-rs watch {g}",
+      "on-scroll-up": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateGamma d +0.02",
+      "on-scroll-down": "busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateGamma d -0.02"
+    }
+}
+
