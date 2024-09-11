@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "gruvbox_dark.css";
 
 * {
   font-family: FantasqueSansMono Nerd Font;
@@ -20,18 +20,18 @@
 }
 
 #workspaces button {
-  color: @lavender;
+  color: @text;
   border-radius: 1rem;
   padding: 0.4rem;
 }
 
 #workspaces button.active {
-  color: @sky;
+  color: @yellow;
     border-radius: 1rem;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
+  color: @surface0;
   border-radius: 1rem;
 }
 
@@ -64,7 +64,7 @@
 
 @keyframes blink {
 to {
-  background-color: @rosewater;
+  background-color: @red;
   color: @mantle;
 }
 }
@@ -74,15 +74,15 @@ to {
 }
 
 #memory {
-  color: @sapphire;
+  color: @blue;
 }
 
 #backlight {
-  color: @teal;
+  color: @aqua;
 }
 
 #network {
-  color: @sapphire;
+  color: @green;
 }
 
 #network.disconnected {
@@ -90,11 +90,11 @@ to {
 }
 
 #pulseaudio {
-  color: @peach;
+  color: @orange;
 }
 
 #pulseaudio.muted {
-  color: @sky;
+  color: @dim_orange;
 }
 
 #custom-media {
@@ -106,20 +106,20 @@ to {
 }
 
 .custom-vlc {
-  color: @peach;
+  color: @dim_orange;
 }
 
 #custom-wl-gammarelay-temperature {
-  color: @maroon;
+  color: @purple;
 }
 
 #custom-pomodoro {
-  color: @lavender;
+  color: @dim_green;
   margin-right: 1em;
 }
 
 #temperature {
-  color: @rosewater;
+  color: @yellow;
 }
 
 #temperature.critical {
@@ -127,13 +127,13 @@ to {
 }
 
 #tray {
-  color: @flamingo;
+  color: @yellow;
 }
 
 #idle_inhibitor {
-  color: @teal;
+  color: @blue;
 }
 
 #idle_inhibitor.activated {
-  color: @sky;
+  color: @dim_blue;
 }

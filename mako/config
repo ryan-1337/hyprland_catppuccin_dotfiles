@@ -5,10 +5,10 @@
 # width=300
 # height=150
 
-background-color=#1e1e2e
-text-color=#cdd6f4
-border-color=#fab387
-progress-color=over #313244
+background-color=#282828
+text-color=#ebdbb2
+border-color=#fabd2f
+progress-color=over #504945
 
 [urgency=high]
-border-color=#fab387
+border-color=#fb493a
