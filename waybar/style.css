@@ -31,7 +31,7 @@
 }
 
 #workspaces button:hover {
-  color: @surface0;
+  color: @yellow;
   border-radius: 1rem;
 }
 
@@ -127,7 +127,7 @@ to {
 }
 
 #tray {
-  color: @yellow;
+  color: @text;
 }
 
 #idle_inhibitor {
